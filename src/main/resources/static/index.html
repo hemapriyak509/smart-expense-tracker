@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Smart Expense Tracker</h1>
+        <p>Track your daily expenses easily</p>
+
+        <div class="expense-form">
+
+            <input type="text" id="title" placeholder="Expense title">
+
+            <input type="number" id="amount" placeholder="Amount">
+
+            <select id="category">
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Education">Education</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="date" id="date">
+
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <button onclick="addExpense()">Add Expense</button>
+
+        </div>
+
+        <div class="summary"> 
+    <h2>Total Expense: ₹<span id="total">0</span></h2> 
+</div>
+
+<div class="filters">
+    <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="🔍 Search expense..."
+        oninput="filterExpenses()"
+    >
+
+    <select id="categoryFilter" onchange="filterExpenses()">
+        <option value="">All Categories</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Education">Education</option>
+        <option value="Other">Other</option>
+    </select>
+</div>
+
+<h2>Expense List</h2>
+
+
+        <div id="expenseList"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
